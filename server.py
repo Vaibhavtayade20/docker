@@ -1,12 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 
 # create flask app
 app = Flask(__name__)
 
 
-# add all the routes
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-@app.route("/", methods=["GET"])
+@app.route("/version", methods=["GET"])
 def root():
     return "welcome to python flask app version1"
 
