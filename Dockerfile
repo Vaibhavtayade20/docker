@@ -1,6 +1,2 @@
-FROM 192.168.0.10:5000/python
-RUN pip install flask
-WORKDIR /src
-COPY . .
-EXPOSE 9000
-CMD python server.py
+FROM httpd
+COPY index.html /usr/local/apache2/htdocs/
